@@ -7,7 +7,7 @@ const server = http.createServer(async (req, res) => {
         try {
             const page = await fs.readFile(path.join(__dirname, "index.html"));
             res.writeHead(200, { "Content-Type": "text/html" });
-            res.end(page.toString());
+            res.end(page);
         } catch (err) {
             if (!res.headersSent) {
                 res.writeHead(500, { "Content-Type": "text/plain" });
@@ -18,7 +18,7 @@ const server = http.createServer(async (req, res) => {
         res.writeHead(200, { "Content-Type": "text/html" });
         try {
             const page = await fs.readFile(path.join(__dirname, "about.html"));
-            res.end(page.toString());
+            res.end(page);
         } catch (err) {
             if (!res.headersSent) {
                 res.writeHead(500, { "Content-Type": "text/plain" });
@@ -30,7 +30,7 @@ const server = http.createServer(async (req, res) => {
             const page = await fs.readFile(
                 path.join(__dirname, "contact-me.html"),
             );
-            res.end(page.toString());
+            res.end(page);
         } catch (err) {
             if (!res.headersSent) {
                 res.writeHead(500, { "Content-Type": "text/plain" });
@@ -41,7 +41,7 @@ const server = http.createServer(async (req, res) => {
         try {
             const page = await fs.readFile(path.join(__dirname, "404.html"));
             res.writeHead(404, { "Content-Type": "text/html" });
-            res.end(page.toString());
+            res.end(page);
         } catch (err) {
             if (!res.headersSent) {
                 res.writeHead(500, { "Content-Type": "text/plain" });
